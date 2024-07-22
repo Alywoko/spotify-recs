@@ -5,16 +5,30 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build"
+    "build": "cd client && npm install && npm run build",
+    "predeploy": "cd client && npm run build",
+    "deploy": "cd client && gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "passport": "^0.7.0",
+    "passport-spotify": "^2.0.0"
+  },
+  "browser": {
+    "crypto": false
   },
   "engines": {
     "node": "v20.14.0"
-}
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
 }
